@@ -6,15 +6,6 @@ const AttendenceController = () => {
     try {
       let { mark, fine } = req.body;
       // validate
-      const Mac = await User.findOne({
-        where: {
-          macId: macId,
-        },
-      });
-      if (!Mac)
-        return res
-          .status(400)
-          .json({ msg: "Try to upload Attendence using you own phone." });
       const newAttendence = {
         mark,
         fine,
