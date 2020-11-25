@@ -1,1 +1,1 @@
-web: npm run nodemon
+web: node ./api/api.js

@@ -92,13 +92,33 @@ app.all("/private/*", (req, res, next) => me(req, res, next));
 app.use('/public', mappedOpenRoutes);
 app.use('/private', mappedAuthRoutes);
 
+// server.listen(config.port, () => {
+//   if (environment !== 'production' &&
+//     environment !== 'development' &&
+//     environment !== 'testing'
+//   ) {
+//     console.error(`NODE_ENV is set to ${environment}, but only production and development are valid.`);
+//     process.exit(1);
+//   }
+//   return DB;
+// });
+
 server.listen(config.port, () => {
-  if (environment !== 'production' &&
-    environment !== 'development' &&
-    environment !== 'testing'
+  console.info(
+    `Server is running on ${environment} on port ${
+      config.port
+    } with routes ${JSON.stringify(config.privateRoutes)}`
+  );
+  if (
+    environment !== "production" &&
+    environment !== "development" &&
+    environment !== "preview"
   ) {
-    console.error(`NODE_ENV is set to ${environment}, but only production and development are valid.`);
+    console.error(
+      `NODE_ENV is set to ${environment}, but only production and development are valid.`
+    );
     process.exit(1);
   }
   return DB;
 });
+
