@@ -15,9 +15,9 @@ const testing = {
 };
 
 const production = {
-  database: 'd336ee17j2cf93',
-  username: 'ljduhgjvorznwk',
-  password: '56d9ad57618523b3e1b93f6ef9906fb56129ed216dc273a0b820370f663304f1',
+  database: 'dbac1dld7c36u3',
+  username: 'heguhowlzzzebo',
+  password: '0660f08887c412d40a4615a0587b2f6e5e1827becd394d6f331743340eb75090',
   host: 'ec2-54-159-138-67.compute-1.amazonaws.com',
   dialect:'postgres',
 };
