@@ -5,8 +5,8 @@ const AttendenceController = () => {
     try {
       let { mark, fine } = req.body;
       // validate
-      // if (!status)
-      //   return res.status(400).json({ msg: "Please Mark Attendence" });
+      if (!mark || !fine)
+        return res.status(400).json({ msg: "field cannot be empty" });
           const newAttendence = ({
             mark,
             fine,
