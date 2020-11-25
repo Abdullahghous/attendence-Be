@@ -18,7 +18,7 @@ const production = {
   database: 'attendence-app',
   username: 'postgres',
   password: '12345',
-  host: 'localhost',
+  host: '127.0.0.1:5432',
   dialect:'postgres',
 };
 
