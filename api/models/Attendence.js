@@ -6,8 +6,11 @@ const hooks = {};
 const tableName = 'attendence';
 
 const Attendence = sequelize.define('Attendence', {
-  status: {
+  mark: {
     type: Sequelize.STRING,
+  },
+  fine: {
+    type:Sequelize.STRING
   }
 }, { hooks, tableName });
 

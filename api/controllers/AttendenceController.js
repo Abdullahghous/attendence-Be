@@ -3,12 +3,12 @@ const Attendence = require('../models/Attendence');
 const AttendenceController = () => {
   const markAttendence = async (req, res) => {
     try {
-      let { attendence } = req.body;
+      let { mark } = req.body;
       // validate
       // if (!status)
       //   return res.status(400).json({ msg: "Please Mark Attendence" });
           const newAttendence = ({
-            status : attendence,
+            mark,
             UserId : req.me.id
           });
           const data = await Attendence.create(newAttendence);
