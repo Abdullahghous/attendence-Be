@@ -2,14 +2,21 @@ const Attendence = require("../models/Attendence");
 
 const AttendenceController = () => {
   const markAttendence = async (req, res) => {
+    const macId = req.params.macId;
     try {
       let { mark, fine } = req.body;
       // validate
-      if(mark == '' || fine == '') {
-        return res.status(404).json({
-          msg : 'field should not be empty'
-        })
-      }
+      if (!mark || !fine)
+        return res.status(400).json({ msg: "Field should not be empty." });
+      const Mac = await User.findOne({
+        where: {
+          macId: macId,
+        },
+      });
+      if (!Mac)
+        return res
+          .status(400)
+          .json({ msg: "Try to upload Attendence using you own phone." });
       const newAttendence = {
         mark,
         fine,
