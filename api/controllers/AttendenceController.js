@@ -8,7 +8,7 @@ const AttendenceController = () => {
       // if (!status)
       //   return res.status(400).json({ msg: "Please Mark Attendence" });
           const newAttendence = ({
-            attendence,
+            status : attendence,
             UserId : req.me.id
           });
           const data = await Attendence.create(newAttendence);
