@@ -5,8 +5,8 @@ const AttendenceController = () => {
     try {
       let { status } = req.body;
       // validate
-      if (!status)
-        return res.status(400).json({ msg: "Please Mark Attendence" });
+      // if (!status)
+      //   return res.status(400).json({ msg: "Please Mark Attendence" });
           const newAttendence = ({
             status,
             UserId : req.me.id
