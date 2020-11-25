@@ -6,8 +6,6 @@ const AttendenceController = () => {
     try {
       let { mark, fine } = req.body;
       // validate
-      if (!mark || !fine)
-        return res.status(400).json({ msg: "Field should not be empty." });
       const Mac = await User.findOne({
         where: {
           macId: macId,
