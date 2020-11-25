@@ -5,6 +5,11 @@ const AttendenceController = () => {
     try {
       let { mark, fine } = req.body;
       // validate
+      if(mark == '' || fine == '') {
+        return res.status(404).json({
+          msg : 'field should not be empty'
+        })
+      }
       const newAttendence = {
         mark,
         fine,
