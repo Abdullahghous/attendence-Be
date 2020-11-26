@@ -50,10 +50,21 @@ const update = (req, res) => {
     });
 };
 
+const getAll = async (req, res) => {
+  try {
+    const detail = await Wifi.findAll();
+
+    return res.status(200).json(detail);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ msg: 'Internal server error' });
+  }
+};
 
   return {
     add,
-    update
+    update,
+    getAll
   };
 };
 

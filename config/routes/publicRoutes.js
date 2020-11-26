@@ -3,6 +3,7 @@ const publicRoutes = {
   'POST /login': 'UserController.login',
   'POST /add/detail': 'WifiController.add',
   'PUT /update/detail/:id': 'WifiController.update',
+  'GET /wifi-detail': 'WifiController.getAll',
 };
 
 module.exports = publicRoutes;
