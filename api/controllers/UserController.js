@@ -28,17 +28,17 @@ const UserController = () => {
         return res
           .status(400)
           .json({ msg: "Mac Address already registered." });
-          const newUser = ({
-            email,
-            password,
-            macId,
-          });
-          const data = await User.create(newUser);
-          return res.status(201).json(data);
+      const newUser = ({
+        email,
+        password,
+        macId,
+      });
+      const data = await User.create(newUser);
+      return res.status(201).json(data);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
-};
+  };
 
   const login = async (req, res) => {
     const { email, password } = req.body;
@@ -92,12 +92,34 @@ const UserController = () => {
     try {
       const userId = req.me.id;
       const attendence = await Attendence.findAll({
-        where : {
-          UserId : userId
+        where: {
+          UserId: userId
         }
       });
 
       return res.status(200).json(attendence);
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json({ msg: 'Internal server error' });
+    }
+  };
+
+  const allData = async (req, res) => {
+    try {
+      const user = await User
+        .findAll({
+          include: [
+            {
+              model: Attendence,
+              required: true
+            },
+          ],
+          raw: true, // <----------- Magic is here
+          nest: true // <----------- Magic is here
+        });
+      return res.status(200).json({
+        user,
+      });
     } catch (err) {
       console.log(err);
       return res.status(500).json({ msg: 'Internal server error' });
@@ -111,7 +133,8 @@ const UserController = () => {
     login,
     validate,
     getAll,
-    userAttendence
+    userAttendence,
+    allData
   };
 };
 
