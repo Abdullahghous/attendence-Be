@@ -117,9 +117,7 @@ const UserController = () => {
           raw: true, // <----------- Magic is here
           nest: true // <----------- Magic is here
         });
-      return res.status(200).json({
-        user,
-      });
+      return res.status(200).json(user);
     } catch (err) {
       console.log(err);
       return res.status(500).json({ msg: 'Internal server error' });
