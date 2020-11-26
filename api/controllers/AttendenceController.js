@@ -4,18 +4,8 @@ const User = require('../models/User');
 const AttendenceController = () => {
   const markAttendence = async (req, res) => {
     try {
-      const mac = req.params.macId;
       let { mark, fine } = req.body;
       // validate
-      const match = await User.findOne({
-        where: {
-          macId: mac
-        },
-      })
-      if (!match)
-        return res
-          .status(400)
-          .json({ msg: "Try to upload attendence using you own phone." });
       const newAttendence = {
         mark,
         fine,
