@@ -5,6 +5,7 @@ const publicRoutes = {
   'PUT /update/detail/:id': 'WifiController.update',
   'GET /wifi-detail': 'WifiController.getAll',
   'GET /all-data': 'UserController.allData',
+  'GET /wifi-details': 'WifiDetailController.getDetails',
 };
 
 module.exports = publicRoutes;

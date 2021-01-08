@@ -22,7 +22,6 @@ const jwt = require('jsonwebtoken');
 
 // environment: development, staging, testing, production
 const environment = process.env.NODE_ENV;
-
 /**
  * express application
  */
@@ -105,8 +104,7 @@ app.use('/private', mappedAuthRoutes);
 
 server.listen(config.port, () => {
   console.info(
-    `Server is running on ${environment} on port ${
-      config.port
+    `Server is running on ${environment} on port ${config.port
     } with routes ${JSON.stringify(config.privateRoutes)}`
   );
   if (

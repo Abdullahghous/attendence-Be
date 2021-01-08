@@ -3,7 +3,7 @@ const development = {
   username: 'postgres',
   password: '12345',
   host: 'localhost',
-  dialect:'postgres',
+  dialect: 'postgres',
 };
 
 const testing = {
@@ -11,15 +11,15 @@ const testing = {
   username: 'postgres',
   password: '12345',
   host: 'localhost',
-  dialect:'postgres',
+  dialect: 'postgres',
 };
 
 const production = {
-  database: 'dbac1dld7c36u3',
-  username: 'heguhowlzzzebo',
-  password: '0660f08887c412d40a4615a0587b2f6e5e1827becd394d6f331743340eb75090',
-  host: 'ec2-54-159-138-67.compute-1.amazonaws.com',
-  dialect:'postgres',
+  database: 'd5sv77s670tcim',
+  username: 'bolcpiqpgncdrr',
+  password: 'd0d8f02ca21f59809f88fbd7b4759e41262fb0b1cbe830c67ab4e7c776b2b625',
+  host: 'ec2-52-205-61-60.compute-1.amazonaws.com',
+  dialect: 'postgres',
 };
 
 // const production = {

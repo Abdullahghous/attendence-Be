@@ -10,7 +10,11 @@ const Attendence = sequelize.define('Attendence', {
     type: Sequelize.STRING,
   },
   fine: {
-    type:Sequelize.STRING
+    type: Sequelize.STRING
+  },
+  markedDate: {
+    type: Sequelize.DATEONLY,
+    defaultValue: Sequelize.NOW
   }
 }, { hooks, tableName });
 
