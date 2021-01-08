@@ -17,7 +17,7 @@ switch (process.env.NODE_ENV) {
       dialectOptions: {
         ssl: true,
         useUTC: true,
-        sslmode: require
+        sslmode: false
       },
       pool: {
         max: 5,
