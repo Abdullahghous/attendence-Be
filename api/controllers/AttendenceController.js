@@ -5,7 +5,7 @@ const moment = require('moment');
 const AttendenceController = () => {
   const markAttendence = async (req, res) => {
     try {
-      console.log('ffffffffff', moment().format('YYYY-MM-DD'));
+      let { mark, fine } = req.body;
 
       const alreadyMarked = await Attendence.findOne({
         where: {
@@ -15,11 +15,8 @@ const AttendenceController = () => {
       })
 
       if (alreadyMarked)
-        return res
-          .status(400)
-          .json({ msg: "You had already marked your attendence" });
+        return res.status(400).json({ msg: "You had already marked your attendence" });
 
-      let { mark, fine } = req.body;
       // validate
       const newAttendence = {
         mark,
