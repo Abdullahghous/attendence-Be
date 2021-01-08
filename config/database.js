@@ -15,7 +15,7 @@ switch (process.env.NODE_ENV) {
       dialect: connection.production.dialect,
       operatorsAliases: false,
       dialectOptions: {
-        ssl: true,
+        ssl: { rejectUnauthorized: false },
         useUTC: true,
         sslmode: require
       },
