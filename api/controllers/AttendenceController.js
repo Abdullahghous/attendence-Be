@@ -15,7 +15,7 @@ const AttendenceController = () => {
       })
 
       if (alreadyMarked)
-        return res.status(400).json({ msg: "You had already marked your attendence" });
+        return res.json({ msg: "You had already marked your attendence" });
 
       // validate
       const newAttendence = {
